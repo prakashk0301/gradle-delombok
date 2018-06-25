@@ -9,6 +9,12 @@ The plugin is available via the [Gradle plugin portal](https://plugins.gradle.or
     plugins {
         id 'de.lukaskoerfer.gradle.delombok' id '0.2'
     }
+    
+Additionally, the plugin requires a version of Lombok in the `compileOnly` configuration (which is required when working with Lombok anyhow). Therefor, this plugin is compatible with the [`io.franzbecker.gradle-lombok` plugin](https://github.com/franzbecker/gradle-lombok). You can also register the lombok dependency manually:
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:$version'
+    }
 
 ## Usage
 Once the plugin is applied, you can create tasks of type `Delombok` to delombok source code:
@@ -17,7 +23,7 @@ Once the plugin is applied, you can create tasks of type `Delombok` to delombok 
         source = files(...)                     // specify a collection of source files
         destinationDir = file('delombok')       // defaults to "$buildDir/delombok/$taskName"
     }
-    
+
 If the [Gradle Java plugin](https://docs.gradle.org/current/userguide/java_plugin.html) is applied to your project, the Delombok plugin will create a `Delombok` task for each source set. The task for the main source set will be called `delombok`, the tasks for the other source sets will be a combination of `delombok` and the name of the source set, e.g. `delombokTest` for the source set `test`.
 
 To create Javadocs from delomboked code, which is often required, simply use the output from the `delombok` task in your `javadoc` task:
