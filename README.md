@@ -10,10 +10,10 @@ The plugin is available via the [Gradle plugin portal](https://plugins.gradle.or
         id 'de.lukaskoerfer.gradle.delombok' id '0.2'
     }
     
-Additionally, the plugin requires a version of Lombok in the `compileOnly` configuration (which is required when working with Lombok anyhow). Therefor, this plugin is compatible with the [`io.franzbecker.gradle-lombok` plugin](https://github.com/franzbecker/gradle-lombok). You can also register the lombok dependency manually:
+Additionally, the plugin requires a version of Lombok in the `compileOnly` configuration (which is required when working with Lombok anyhow). Therefor, this plugin is compatible with the [`io.franzbecker.gradle-lombok` plugin](https://github.com/franzbecker/gradle-lombok). You can also register the Lombok dependency manually:
 
     dependencies {
-        compileOnly 'org.projectlombok:lombok:$version'
+        compileOnly 'org.projectlombok:lombok:1.18.0'
     }
 
 ## Usage
