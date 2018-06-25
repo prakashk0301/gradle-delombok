@@ -14,7 +14,7 @@ public class DelombokPlugin implements Plugin<Project> {
     @Override
     public void apply(Project project) {
         // Register Delombok task type
-        project.getExtensions().getExtraProperties().set(Delombok.class.getName(), Delombok.class);
+        project.getExtensions().getExtraProperties().set(Delombok.class.getSimpleName(), Delombok.class);
         // Configure Java plugin
         project.getPluginManager().withPlugin("java", plugin -> {
             JavaPluginConvention javaPlugin = project.getConvention().getPlugin(JavaPluginConvention.class);

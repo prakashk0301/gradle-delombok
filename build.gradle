@@ -2,10 +2,11 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'com.gradle.plugin-publish' version '0.9.10'
+    id 'de.lukaskoerfer.gradle.delombok' version '0.1'
 }
 
 group 'de.lukaskoerfer.gradle'
-version '0.1'
+version '0.2'
 
 repositories {
     jcenter()
@@ -14,6 +15,11 @@ repositories {
 dependencies {
     compile gradleApi()
     compileOnly 'org.projectlombok:lombok:1.18.0'
+}
+
+javadoc {
+    source = delombok
+    destinationDir = file('docs/javadoc')
 }
 
 publishing {
