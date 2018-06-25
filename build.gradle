@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '0.9.10'
+}
+
+group 'de.lukaskoerfer.gradle'
+version '0.1'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile gradleApi()
+    compileOnly 'org.projectlombok:lombok:1.18.0'
+}
+
+publishing {
+    publications {
+        plugin(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/lukoerfer/gradle-delombok'
+    vcsUrl = 'https://github.com/lukoerfer/gradle-delombok'
+    plugins {
+        plugin {
+            id = 'de.lukaskoerfer.gradle.delombok'
+            displayName = 'Delombok Plugin'
+            description = 'Provides tasks to delombok Java source code'
+            tags = ['lombok', 'delombok']
+        }
+    }
+}
