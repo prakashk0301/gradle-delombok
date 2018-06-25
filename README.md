@@ -7,7 +7,7 @@
 The plugin is available via the [Gradle plugin portal](https://plugins.gradle.org/plugin/de.lukaskoerfer.gradle.delombok). Simply add the following entry to your `plugins` block:
 
     plugins {
-        id 'de.lukaskoerfer.gradle.delombok' id '0.1'
+        id 'de.lukaskoerfer.gradle.delombok' id '0.2'
     }
 
 ## Usage
