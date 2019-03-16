@@ -7,7 +7,7 @@
 The plugin is available via the [Gradle plugin portal](https://plugins.gradle.org/plugin/de.lukaskoerfer.gradle.delombok). Simply add the following entry to your `plugins` block:
 
     plugins {
-        id 'de.lukaskoerfer.gradle.delombok' id '0.2'
+        id 'de.lukaskoerfer.gradle.delombok' version '0.2'
     }
     
 Additionally, the plugin requires a version of Lombok in the `compileOnly` configuration (which is required when working with Lombok anyhow). Therefor, this plugin is compatible with the [`io.franzbecker.gradle-lombok` plugin](https://github.com/franzbecker/gradle-lombok). You can also register the Lombok dependency manually:
